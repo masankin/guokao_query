@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="test.guokao.dao.JobInfoMapper" >
+  <resultMap id="BaseResultMap" type="test.guokao.model.JobInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="basic_level" property="basic_level" jdbcType="VARCHAR" />
+    <result column="degree" property="degree" jdbcType="VARCHAR" />
+    <result column="deptcode" property="deptcode" jdbcType="VARCHAR" />
+    <result column="deptname" property="deptname" jdbcType="VARCHAR" />
+    <result column="education" property="education" jdbcType="VARCHAR" />
+    <result column="employplace" property="employplace" jdbcType="VARCHAR" />
+    <result column="institutional_level" property="institutional_level" jdbcType="VARCHAR" />
+    <result column="institutional_properties" property="institutional_properties" jdbcType="VARCHAR" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+    <result column="other" property="other" jdbcType="VARCHAR" />
+    <result column="percentage" property="percentage" jdbcType="VARCHAR" />
+    <result column="political_status" property="political_status" jdbcType="VARCHAR" />
+    <result column="position" property="position" jdbcType="VARCHAR" />
+    <result column="position_name" property="position_name" jdbcType="VARCHAR" />
+    <result column="position_number" property="position_number" jdbcType="VARCHAR" />
+    <result column="position_property" property="position_property" jdbcType="VARCHAR" />
+    <result column="position_summary" property="position_summary" jdbcType="VARCHAR" />
+    <result column="professional_exam" property="professional_exam" jdbcType="VARCHAR" />
+    <result column="recruit_number" property="recruit_number" jdbcType="VARCHAR" />
+    <result column="special_teacther" property="special_teacther" jdbcType="VARCHAR" />
+    <result column="speciality" property="speciality" jdbcType="VARCHAR" />
+    <result column="telephone1" property="telephone1" jdbcType="VARCHAR" />
+    <result column="telephone2" property="telephone2" jdbcType="VARCHAR" />
+    <result column="telephone3" property="telephone3" jdbcType="VARCHAR" />
+    <result column="test_category" property="test_category" jdbcType="VARCHAR" />
+    <result column="three_hand_students" property="three_hand_students" jdbcType="VARCHAR" />
+    <result column="unlimit" property="unlimit" jdbcType="VARCHAR" />
+    <result column="village_officials" property="village_officials" jdbcType="VARCHAR" />
+    <result column="volunteers_west" property="volunteers_west" jdbcType="VARCHAR" />
+    <result column="website" property="website" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, basic_level, degree, deptcode, deptname, education, employplace, institutional_level, 
+    institutional_properties, notes, other, percentage, political_status, position, position_name, 
+    position_number, position_property, position_summary, professional_exam, recruit_number, 
+    special_teacther, speciality, telephone1, telephone2, telephone3, test_category, 
+    three_hand_students, unlimit, village_officials, volunteers_west, website
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jobinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jobinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="test.guokao.model.JobInfo" >
+    insert into jobinfo (id, basic_level, degree, 
+      deptcode, deptname, education, 
+      employplace, institutional_level, institutional_properties, 
+      notes, other, percentage, 
+      political_status, position, position_name, 
+      position_number, position_property, position_summary, 
+      professional_exam, recruit_number, special_teacther, 
+      speciality, telephone1, telephone2, 
+      telephone3, test_category, three_hand_students, 
+      unlimit, village_officials, volunteers_west, 
+      website)
+    values (#{id,jdbcType=INTEGER}, #{basic_level,jdbcType=VARCHAR}, #{degree,jdbcType=VARCHAR}, 
+      #{deptcode,jdbcType=VARCHAR}, #{deptname,jdbcType=VARCHAR}, #{education,jdbcType=VARCHAR}, 
+      #{employplace,jdbcType=VARCHAR}, #{institutional_level,jdbcType=VARCHAR}, #{institutional_properties,jdbcType=VARCHAR}, 
+      #{notes,jdbcType=VARCHAR}, #{other,jdbcType=VARCHAR}, #{percentage,jdbcType=VARCHAR}, 
+      #{political_status,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{position_name,jdbcType=VARCHAR}, 
+      #{position_number,jdbcType=VARCHAR}, #{position_property,jdbcType=VARCHAR}, #{position_summary,jdbcType=VARCHAR}, 
+      #{professional_exam,jdbcType=VARCHAR}, #{recruit_number,jdbcType=VARCHAR}, #{special_teacther,jdbcType=VARCHAR}, 
+      #{speciality,jdbcType=VARCHAR}, #{telephone1,jdbcType=VARCHAR}, #{telephone2,jdbcType=VARCHAR}, 
+      #{telephone3,jdbcType=VARCHAR}, #{test_category,jdbcType=VARCHAR}, #{three_hand_students,jdbcType=VARCHAR}, 
+      #{unlimit,jdbcType=VARCHAR}, #{village_officials,jdbcType=VARCHAR}, #{volunteers_west,jdbcType=VARCHAR}, 
+      #{website,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.guokao.model.JobInfo" >
+    insert into jobinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="basic_level != null" >
+        basic_level,
+      </if>
+      <if test="degree != null" >
+        degree,
+      </if>
+      <if test="deptcode != null" >
+        deptcode,
+      </if>
+      <if test="deptname != null" >
+        deptname,
+      </if>
+      <if test="education != null" >
+        education,
+      </if>
+      <if test="employplace != null" >
+        employplace,
+      </if>
+      <if test="institutional_level != null" >
+        institutional_level,
+      </if>
+      <if test="institutional_properties != null" >
+        institutional_properties,
+      </if>
+      <if test="notes != null" >
+        notes,
+      </if>
+      <if test="other != null" >
+        other,
+      </if>
+      <if test="percentage != null" >
+        percentage,
+      </if>
+      <if test="political_status != null" >
+        political_status,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="position_name != null" >
+        position_name,
+      </if>
+      <if test="position_number != null" >
+        position_number,
+      </if>
+      <if test="position_property != null" >
+        position_property,
+      </if>
+      <if test="position_summary != null" >
+        position_summary,
+      </if>
+      <if test="professional_exam != null" >
+        professional_exam,
+      </if>
+      <if test="recruit_number != null" >
+        recruit_number,
+      </if>
+      <if test="special_teacther != null" >
+        special_teacther,
+      </if>
+      <if test="speciality != null" >
+        speciality,
+      </if>
+      <if test="telephone1 != null" >
+        telephone1,
+      </if>
+      <if test="telephone2 != null" >
+        telephone2,
+      </if>
+      <if test="telephone3 != null" >
+        telephone3,
+      </if>
+      <if test="test_category != null" >
+        test_category,
+      </if>
+      <if test="three_hand_students != null" >
+        three_hand_students,
+      </if>
+      <if test="unlimit != null" >
+        unlimit,
+      </if>
+      <if test="village_officials != null" >
+        village_officials,
+      </if>
+      <if test="volunteers_west != null" >
+        volunteers_west,
+      </if>
+      <if test="website != null" >
+        website,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="basic_level != null" >
+        #{basic_level,jdbcType=VARCHAR},
+      </if>
+      <if test="degree != null" >
+        #{degree,jdbcType=VARCHAR},
+      </if>
+      <if test="deptcode != null" >
+        #{deptcode,jdbcType=VARCHAR},
+      </if>
+      <if test="deptname != null" >
+        #{deptname,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="employplace != null" >
+        #{employplace,jdbcType=VARCHAR},
+      </if>
+      <if test="institutional_level != null" >
+        #{institutional_level,jdbcType=VARCHAR},
+      </if>
+      <if test="institutional_properties != null" >
+        #{institutional_properties,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null" >
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="percentage != null" >
+        #{percentage,jdbcType=VARCHAR},
+      </if>
+      <if test="political_status != null" >
+        #{political_status,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="position_name != null" >
+        #{position_name,jdbcType=VARCHAR},
+      </if>
+      <if test="position_number != null" >
+        #{position_number,jdbcType=VARCHAR},
+      </if>
+      <if test="position_property != null" >
+        #{position_property,jdbcType=VARCHAR},
+      </if>
+      <if test="position_summary != null" >
+        #{position_summary,jdbcType=VARCHAR},
+      </if>
+      <if test="professional_exam != null" >
+        #{professional_exam,jdbcType=VARCHAR},
+      </if>
+      <if test="recruit_number != null" >
+        #{recruit_number,jdbcType=VARCHAR},
+      </if>
+      <if test="special_teacther != null" >
+        #{special_teacther,jdbcType=VARCHAR},
+      </if>
+      <if test="speciality != null" >
+        #{speciality,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone1 != null" >
+        #{telephone1,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone2 != null" >
+        #{telephone2,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone3 != null" >
+        #{telephone3,jdbcType=VARCHAR},
+      </if>
+      <if test="test_category != null" >
+        #{test_category,jdbcType=VARCHAR},
+      </if>
+      <if test="three_hand_students != null" >
+        #{three_hand_students,jdbcType=VARCHAR},
+      </if>
+      <if test="unlimit != null" >
+        #{unlimit,jdbcType=VARCHAR},
+      </if>
+      <if test="village_officials != null" >
+        #{village_officials,jdbcType=VARCHAR},
+      </if>
+      <if test="volunteers_west != null" >
+        #{volunteers_west,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        #{website,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="test.guokao.model.JobInfo" >
+    update jobinfo
+    <set >
+      <if test="basic_level != null" >
+        basic_level = #{basic_level,jdbcType=VARCHAR},
+      </if>
+      <if test="degree != null" >
+        degree = #{degree,jdbcType=VARCHAR},
+      </if>
+      <if test="deptcode != null" >
+        deptcode = #{deptcode,jdbcType=VARCHAR},
+      </if>
+      <if test="deptname != null" >
+        deptname = #{deptname,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        education = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="employplace != null" >
+        employplace = #{employplace,jdbcType=VARCHAR},
+      </if>
+      <if test="institutional_level != null" >
+        institutional_level = #{institutional_level,jdbcType=VARCHAR},
+      </if>
+      <if test="institutional_properties != null" >
+        institutional_properties = #{institutional_properties,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null" >
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="other != null" >
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="percentage != null" >
+        percentage = #{percentage,jdbcType=VARCHAR},
+      </if>
+      <if test="political_status != null" >
+        political_status = #{political_status,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="position_name != null" >
+        position_name = #{position_name,jdbcType=VARCHAR},
+      </if>
+      <if test="position_number != null" >
+        position_number = #{position_number,jdbcType=VARCHAR},
+      </if>
+      <if test="position_property != null" >
+        position_property = #{position_property,jdbcType=VARCHAR},
+      </if>
+      <if test="position_summary != null" >
+        position_summary = #{position_summary,jdbcType=VARCHAR},
+      </if>
+      <if test="professional_exam != null" >
+        professional_exam = #{professional_exam,jdbcType=VARCHAR},
+      </if>
+      <if test="recruit_number != null" >
+        recruit_number = #{recruit_number,jdbcType=VARCHAR},
+      </if>
+      <if test="special_teacther != null" >
+        special_teacther = #{special_teacther,jdbcType=VARCHAR},
+      </if>
+      <if test="speciality != null" >
+        speciality = #{speciality,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone1 != null" >
+        telephone1 = #{telephone1,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone2 != null" >
+        telephone2 = #{telephone2,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone3 != null" >
+        telephone3 = #{telephone3,jdbcType=VARCHAR},
+      </if>
+      <if test="test_category != null" >
+        test_category = #{test_category,jdbcType=VARCHAR},
+      </if>
+      <if test="three_hand_students != null" >
+        three_hand_students = #{three_hand_students,jdbcType=VARCHAR},
+      </if>
+      <if test="unlimit != null" >
+        unlimit = #{unlimit,jdbcType=VARCHAR},
+      </if>
+      <if test="village_officials != null" >
+        village_officials = #{village_officials,jdbcType=VARCHAR},
+      </if>
+      <if test="volunteers_west != null" >
+        volunteers_west = #{volunteers_west,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        website = #{website,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="test.guokao.model.JobInfo" >
+    update jobinfo
+    set basic_level = #{basic_level,jdbcType=VARCHAR},
+      degree = #{degree,jdbcType=VARCHAR},
+      deptcode = #{deptcode,jdbcType=VARCHAR},
+      deptname = #{deptname,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR},
+      employplace = #{employplace,jdbcType=VARCHAR},
+      institutional_level = #{institutional_level,jdbcType=VARCHAR},
+      institutional_properties = #{institutional_properties,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR},
+      other = #{other,jdbcType=VARCHAR},
+      percentage = #{percentage,jdbcType=VARCHAR},
+      political_status = #{political_status,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      position_name = #{position_name,jdbcType=VARCHAR},
+      position_number = #{position_number,jdbcType=VARCHAR},
+      position_property = #{position_property,jdbcType=VARCHAR},
+      position_summary = #{position_summary,jdbcType=VARCHAR},
+      professional_exam = #{professional_exam,jdbcType=VARCHAR},
+      recruit_number = #{recruit_number,jdbcType=VARCHAR},
+      special_teacther = #{special_teacther,jdbcType=VARCHAR},
+      speciality = #{speciality,jdbcType=VARCHAR},
+      telephone1 = #{telephone1,jdbcType=VARCHAR},
+      telephone2 = #{telephone2,jdbcType=VARCHAR},
+      telephone3 = #{telephone3,jdbcType=VARCHAR},
+      test_category = #{test_category,jdbcType=VARCHAR},
+      three_hand_students = #{three_hand_students,jdbcType=VARCHAR},
+      unlimit = #{unlimit,jdbcType=VARCHAR},
+      village_officials = #{village_officials,jdbcType=VARCHAR},
+      volunteers_west = #{volunteers_west,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+   <select id="getJobInfoList" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from jobinfo LIMIT 0 ,10
+  
+  </select>
+  
+</mapper>

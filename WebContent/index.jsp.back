@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>国考报名查询系统</title>
+
+    <!-- Bootstrap -->
+    <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" />
+
+  </head>
+  <body>
+   
+    <div>
+     <h2>国考信息</h2>
+    <table class="table table-hover">
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	  <tr><td>1</td><td>2</td><td>3</td></tr>
+	 
+	</table>
+    </div>
+    
+  	<script src="<%=request.getContextPath()%>/js/jquery.js"></script>
+	<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+	
+	
+    <script type="text/javascript">
+    	$(function(){
+    		 $.post("${pageContext.request.contextPath}/jobInfoList/getList.do",
+    				function(r) {
+    			alert(r);
+    		
+    			}, 'json'
+    			
+    		); 
+    	});
+    </script>
+
+  </body>
+</html>
