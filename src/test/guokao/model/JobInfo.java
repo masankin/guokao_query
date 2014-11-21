@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="jobinfo")
-public class JobInfo {
+public class JobInfo extends Page{
 
 	@Id
 	@GeneratedValue

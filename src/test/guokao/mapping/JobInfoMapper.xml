@@ -402,7 +402,7 @@
    <select id="getJobInfoList" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
-    from jobinfo LIMIT 0 ,10
+    from jobinfo LIMIT 0 ,20
   
   </select>
   

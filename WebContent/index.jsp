@@ -15,36 +15,116 @@
   margin-left:10px;
   margin-right:10px;
   margin-bottom:20px;
+  	text-align:center;
 }
 #jobInfo_table{
 
 	border : 1px ;
+	align:center;
+	text-align:center;
+}
+#searchform{
+text-align:left;
+}
+th{
+	text-align:center;
 }
 </style>
 </head>
 <body>
   <div id = "div1">
-     <h2>国考信息筛选系统</h2>
+     <h2>国考信息筛选系统 </h2>
+     
+     
      
      <hr>
-     
-     筛选条件：
-     <div class="dropdown">
-		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-		   部门名称
-		    <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">中央纪委、监察部机关</a></li>
-		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-		  </ul>
-	</div>
-  
+     <div id="searchform">
+<h4>搜索条件：</h4>
+ <form class="form-inline" role="form">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">学历</div>
+        <select class="form-control">
+		  <option>大专</option>
+		  <option>本科</option>
+		  <option>硕士</option>
+		  <option>博士</option>
+		  <option>其他</option>
+		</select>
+   	 </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">学位</div>
+        <select class="form-control">
+		  <option>学士</option>
+		  <option>硕士</option>
+		  <option>博士</option>
+		</select>
+   	 </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">专业</div>
+        <select class="form-control">
+		  <option>计算机科学与技术</option>
+		  <option>土木工程</option>
+		  <option>软件工程</option>
+		  <option>法学</option>
+		  <option>经济学</option>
+		</select>
+   	 </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">毕业时间</div>
+        <select class="form-control">
+		  <option>2010</option>
+		  <option>2010</option>
+		  <option>2011</option>
+		  <option>2012</option>
+		  <option>2013</option>
+		  <option>2014</option>
+		  <option>2015</option>
+		</select>
+   	 </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">政治面貌</div>
+        <select class="form-control">
+		  <option>团员</option>
+		  <option>党员</option>
+		  <option>群众</option>
+		</select>
+   	 </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">基层工作年限</div>
+        <select class="form-control">
+		  <option>无</option>
+		  <option>一年</option>
+		  <option>两年</option>
+		</select>
+   	 </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">欲工作地点</div>
+        <select class="form-control">
+		  <option>北京</option>
+		  <option>上海</option>
+		  <option>山西</option>
+		</select>
+   	 </div>
+  </div>
+ 
+  <button type="submit" class="btn btn-success">搜索</button>
+</form>
+</div>
      <hr>
-     
-    <table class="table table-bordered table-condensed" id="jobInfo_table">
+    <table class="table table-striped table-bordered table-condensed table-hover" id="jobInfo_table">
 	  <tr class="active">
 	  <th>索引</th>
 	  <th>部门代码</th>
@@ -63,25 +143,24 @@
 	  <th>学历</th>
 	  <th>政治面貌</th>
 	  <th>基层工作最低年限</th>
-	  <th>‘三支一扶’大学生</th>
+	  <th>'三支一扶'大学生</th>
 	  <th>西部志愿者</th>
 	  <th>大学生村官</th>
 	  <th>特岗计划教师</th>
 	  <th>无限制</th>
 	  <th>是否组织专业考试</th>
-	  <th>比例</th>
+	  <th>面试人选与计划录用人数的确定比例</th>
 	  <th>其他条件</th>
 	  <th>备注</th>
 	  <th>职位分布</th>
-	  <th>部门网站</th>
-	  <th>咨询电话1</th>
-	  <th>咨询电话2</th>
-	  <th>咨询电话3</th> 
+	  <th style="display:none;">部门网站</th>
+	  <th style="display:none;">咨询电话1</th>
+	  <th style="display:none;">咨询电话2</th>
+	  <th style="display:none;">咨询电话3</th> 
 	  </tr> 
 	 
 	</table>
-	<div style="text-align: center;">
-		<nav>
+		<div>
 		  <ul class="pagination">
 		    <li><a href="#">&laquo;</a></li>
 		    <li><a href="#">1</a></li>
@@ -92,11 +171,10 @@
 		    <li><a href="#">...</a></li>
 		    <li><a href="#">100</a></li>
 		    <li><a href="#">&raquo;</a></li>
+		    <li><a>共有:<em>13478</em> 条</a></li>
 		  </ul>
-		</nav>
+		</div>
 
-</nav>
-	</div>
 	
     </div>
 
@@ -113,7 +191,7 @@
     			 
     			 for(var i=0;i<data.length;i++){
     				 
-    				 tab.append("<tr class=\"success\"><td>"+(i+1)
+    				 tab.append("<tr onDblClick  = \"getCutInfo(this)\" ><td>"+(i+1)
 													+"</td><td>"+data[i].deptcode
 													+"</td><td>"+data[i].deptname
 													+"</td><td>"+data[i].employplace
@@ -140,10 +218,10 @@
 													+"</td><td>"+data[i].other
 													+"</td><td>"+data[i].notes
 													+"</td><td>"+data[i].position
-													+"</td><td>"+data[i].website
-													+"</td><td>"+data[i].telephone1
-													+"</td><td>"+data[i].telephone2
-													+"</td><td>"+data[i].telephone3
+													+"</td><td style=\"display:none;\">"+data[i].website
+													+"</td><td style=\"display:none;\">"+data[i].telephone1
+													+"</td><td style=\"display:none;\">"+data[i].telephone2
+													+"</td><td style=\"display:none;\">"+data[i].telephone3
 												+"</td></tr>");
  				
     			 }
@@ -152,6 +230,24 @@
     			
     		); 
     	});
+    	
+    	
+    	function getCutInfo(_this_){
+    	
+    		var cur = _this_;
+    		
+    		var tds = $(cur).children();
+    		
+    		var td_content = [];
+    		
+    		for(var i=0;i<tds.length;i++){
+    			
+    		 td_content.push($(tds[i]).html());
+    		}
+    		
+    		
+    		alert(td_content);
+    	}
     </script>
 </body>
 </html>

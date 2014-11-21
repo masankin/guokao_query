@@ -32,7 +32,6 @@ public class JobInfoController {
 	@ResponseBody
 	public JSON getJobInfoList(){
 		
-		System.out.println(12312312);
 		JobInfo jobInfo = new JobInfo();
 		
 		List<JobInfo> jobInfolist= jobInfoServiceI.getJobInfoList(jobInfo);
