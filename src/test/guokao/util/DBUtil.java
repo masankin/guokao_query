@@ -31,6 +31,7 @@ public class DBUtil {
 			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 			
 			session=sessionFactory.openSession();
+		
 
 			
 		} catch (HibernateException e) {
@@ -39,14 +40,12 @@ public class DBUtil {
 	}
 	
 	
-	public void save(JobInfo jobInfo,int i) {
+	public void save(Object jobInfo) {
 		
-	
-		Transaction tx=session.beginTransaction();
-		
+		Transaction tx =session.beginTransaction();
 		session.save(jobInfo);//保存后customer对象处于持久化状态
 		
-		if(i%500==0) //以每500个数据作为一个处理单元
+		//if(i%500==0) //以每500个数据作为一个处理单元
 			{
 			session.flush(); //保持与数据库数据的同步
 			session.clear(); //清除内部缓存的全部数据，及时释放出占用的内存

@@ -1,7 +1,6 @@
 package test.guokao.test;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,6 +12,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 import test.guokao.model.JobInfo;
+import test.guokao.model.Speciality;
 import test.guokao.util.DBDaoUtils;
 import test.guokao.util.DBUtil;
 import test.guokao.util.Excel2DB;
@@ -32,7 +32,7 @@ public class Test {
 		for (int i = 0; i < jobInfoList.size(); i++) {
 			
 			
-			dbUtil.save(jobInfoList.get(i),i);
+			//dbUtil.save(jobInfoList.get(i),i);
 		}
 		Date end = new Date();	
 		
@@ -166,6 +166,16 @@ public class Test {
 			for(String names: setNames){
 				
 				System.out.println(id+"--->"+names);
+				
+				Speciality speciality = new Speciality();
+				
+				speciality.setJobid(id);
+				speciality.setSpecialityName(names);
+				
+				DBUtil dbUtil = new DBUtil();
+				
+				dbUtil.save(speciality);
+				
 				//System.out.println(names);
 				countSpeciality++;
 			}
