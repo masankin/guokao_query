@@ -402,8 +402,11 @@
    <select id="getJobInfoList" resultMap="BaseResultMap"  >
     select 
     <include refid="Base_Column_List" />
-    from jobinfo LIMIT 0 ,20
+    from jobinfo LIMIT 0 ,15
   
+  </select>
+   <select id="getSpecialityInfo" resultMap="BaseResultMap"  >
+   select id , speciality from jobinfo 
   </select>
   
 </mapper>

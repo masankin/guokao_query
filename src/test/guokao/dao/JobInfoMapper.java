@@ -20,4 +20,6 @@ public interface JobInfoMapper {
     int updateByPrimaryKey(JobInfo record);
     
     List<JobInfo> getJobInfoList(JobInfo record);
+
+	List<JobInfo> getSpecialityInfo();
 }
